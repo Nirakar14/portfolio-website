@@ -275,7 +275,7 @@ footer{background:var(--text);color:rgba(255,255,255,.42);padding:1.4rem 0;font-
     <div class="hero-text">
       <p class="hero-label">Electrical Engineer</p>
       <h1 class="hero-name">Nirakar<br><em>Nepal</em></h1>
-      <p class="hero-sub">Power Electronics · Renewable Energy Systems · Energy Optimization</p>
+      <p class="hero-sub">Optimization · Renewable Energy Systems · Power Electronics </p>
       <div class="hero-btns">
         <!-- ★ REPLACE: rename your CV file to cv.pdf and put it in assets/documents/ -->
         <a href="assets/documents/cv.pdf" download class="btn btn-g">⬇ Download CV</a>
@@ -320,7 +320,7 @@ footer{background:var(--text);color:rgba(255,255,255,.42);padding:1.4rem 0;font-
     <div class="about-grid">
       <div class="about-text rev">
         <!-- ★ UPDATE: Edit this paragraph if you want to change your bio -->
-        <p>I am an Electrical Engineering undergraduate at Pulchowk Campus, Institute of Engineering, Tribhuvan University, specializing in Power Electronics, Renewable Energy Systems, and Energy Optimization.</p>
+        <p>I am an Electrical Engineering graduate at Pulchowk Campus, Institute of Engineering, Tribhuvan University, specializing in Power Electronics, Renewable Energy Systems, and Energy Optimization.</p>
         <p>My focus is on modeling, simulation, and hardware-software integration to analyze and optimize converter designs, battery energy storage, and grid-interfaced renewable systems. Using dynamic system modeling, control strategies, and AI-driven optimization, I investigate ways to enhance grid resilience, efficiency, and stability in high-renewable-penetration networks.</p>
         <p>By bridging theoretical models with practical simulation and experimentation, I aim to contribute to seamless, efficient, and scalable renewable energy integration in modern power systems.</p>
       </div>
@@ -375,10 +375,21 @@ footer{background:var(--text);color:rgba(255,255,255,.42);padding:1.4rem 0;font-
 
       <!-- ★ UPDATE: Fill in your real paper titles, descriptions, journal names, years, and links -->
       <!-- ★ ADD MORE: Copy a .paper-card block for each additional paper -->
-      <a href="https://YOUR-PAPER-1-LINK.com" target="_blank" rel="noopener" class="paper-card rev d1">
+
+       <a href="https://www.sciencedirect.com/science/article/pii/S2590174526004162" target="_blank" rel="noopener" class="paper-card rev d3">
+        <div class="paper-num">Paper 03</div>
+        <h3>Physics-Based Screening and Robust Multi-Objective Optimization of Distributed Energy Resource Architectures for LV Microgrids</h3>
+        <p class="paper-desc">This paper develops a two-stage optimization framework for planning distributed energy resources in low-voltage microgrids. First, multiple DER architectures are screened using physics-based time-series load-flow simulation and Grey Relational Analysis. Then, the best candidates are refined using robust multi-objective NSGA-II optimization to minimize grid-import energy and total annual cost while satisfying worst-case voltage and operational constraints.</p>
+        <div class="paper-foot">
+          <span class="paper-journal">Energy Conversion and Management: X (Elsiver)</span>
+          <span class="paper-year">2026</span>
+        </div>
+        <div style="margin-top:.75rem"><span class="paper-arrow">Read Paper →</span></div>
+      </a>
+      <a href="https://nepjol.info/index.php/jsce/article/download/91444/69967" target="_blank" rel="noopener" class="paper-card rev d1">
         <div class="paper-num">Paper 01</div>
         <h3>An Artificial Neural Network–Based Approach for Harmonic Components Prediction in Grid-Connected PV Systems</h3>
-        <p class="paper-desc">Brief description of what this paper covers — its contribution, methodology, and significance in power electronics or renewable energy systems.</p>
+        <p class="paper-desc">This paper proposes a lightweight ANN-based model for predicting harmonic distortion in grid-connected PV systems. Using only solar irradiance and ambient temperature as inputs, the model predicts THD and selected harmonic components from measured data of a 6.4 kW rooftop PV system. The ANN achieved about 83% prediction accuracy, showing that simple environmental inputs can support fast harmonic estimation for real-time monitoring and adaptive active filter control.</p>
         <div class="paper-foot">
           <span class="paper-journal">IEEE International Conference on Role of Energy for Sustainable Social Development. Journal of Science and Engineering (JScE), Special Issue (Vol. 12, No. 2)</span>
           <span class="paper-year">2026</span>
@@ -389,20 +400,9 @@ footer{background:var(--text);color:rgba(255,255,255,.42);padding:1.4rem 0;font-
       <a href="https://YOUR-PAPER-2-LINK.com" target="_blank" rel="noopener" class="paper-card rev d2">
         <div class="paper-num">Paper 02</div>
         <h3>Co-Optimization of Battery Energy Storage Systems for Voltage Regulation and Reverse Power Flow Control in PV-Enriched LV Distribution Network</h3>
-        <p class="paper-desc">Brief description of what this paper covers — its contribution, methodology, and significance in power electronics or renewable energy systems.</p>
+        <p class="paper-desc">This paper presents a coordinated optimization framework for deploying BESS in PV-rich low-voltage distribution networks. A hybrid GA–PSO method is used to optimize BESS placement and sizing for voltage regulation and reverse power flow reduction, while dynamic consensus control coordinates the distributed batteries during operation. Results show that four optimally placed BESS units can maintain voltages within 0.95–1.05 pu, reduce reverse power flow, and ensure balanced battery utilization.</p>
         <div class="paper-foot">
           <span class="paper-journal">IET Smart Energy Systems (Under Review)</span>
-          <span class="paper-year">2026</span>
-        </div>
-        <div style="margin-top:.75rem"><span class="paper-arrow">Read Paper →</span></div>
-      </a>
-
-      <a href="https://YOUR-PAPER-3-LINK.com" target="_blank" rel="noopener" class="paper-card rev d3">
-        <div class="paper-num">Paper 03</div>
-        <h3>Physics-Based Screening and Robust Multi-Objective Optimization of Distributed Energy Resource Architectures for LV Microgrids</h3>
-        <p class="paper-desc">Brief description of what this paper covers — its contribution, methodology, and significance in power electronics or renewable energy systems.</p>
-        <div class="paper-foot">
-          <span class="paper-journal">International Journal of Electrical Power and Energy Systems (Under Review)</span>
           <span class="paper-year">2026</span>
         </div>
         <div style="margin-top:.75rem"><span class="paper-arrow">Read Paper →</span></div>
@@ -640,6 +640,7 @@ footer{background:var(--text);color:rgba(255,255,255,.42);padding:1.4rem 0;font-
         <div class="social-chips">
           <!-- ★ UPDATE: Replace with your actual profile URLs -->
           <a href="https://www.linkedin.com/in/nirakar-nepal" target="_blank" rel="noopener" class="chip">LinkedIn</a>
+          <a href="https://scholar.google.com/citations?user=3oTaODkAAAAJ&hl=en" target="_blank" rel="noopener" class="chip">Google Scholar</a>
           <a href="https://orcid.org/0009-0002-7123-742X" target="_blank" rel="noopener" class="chip">ORCID</a>
           <a href="https://www.instagram.com/nirakar.14" target="_blank" rel="noopener" class="chip">Instagram</a>
         </div>
