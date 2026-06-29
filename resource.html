@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resources — Nirakar Nepal</title>
+  <meta name="description" content="Resources, documents, and reference PDFs shared by Nirakar Nepal." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+
+<style>
+/* =============================================================
+   NIRAKAR NEPAL — RESOURCES PAGE
+   (reuses the same design tokens as your main site)
+   ============================================================= */
+:root {
+  --bg:#F5F4F0; --bg-alt:#ECEAE4; --surface:#FFFFFF; --border:#DEDBD2;
+  --text:#18171A; --muted:#74716B; --accent:#1B5E35; --accent-lt:#E8F2EC;
+  --nav-h:64px; --max-w:1080px; --r:6px; --r-lg:14px;
+  --ease:cubic-bezier(0.16,1,0.3,1); --t:0.3s cubic-bezier(0.16,1,0.3,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:inherit}
+.wrap{max-width:var(--max-w);margin:0 auto;padding:0 2rem}
+
+/* ── NAVBAR ───────────────────────────────────────────────── */
+#nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:200;
+  background:rgba(245,244,240,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);box-shadow:0 2px 20px rgba(0,0,0,.05)}
+.nav-in{max-width:var(--max-w);margin:0 auto;padding:0 2rem;height:100%;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:'DM Serif Display',serif;font-size:1.35rem;color:var(--accent);letter-spacing:.04em}
+.nav-ul{display:flex;align-items:center;gap:.15rem}
+.nav-ul a{font-size:.83rem;color:var(--muted);padding:.38rem .7rem;border-radius:var(--r);transition:color .2s,background .2s}
+.nav-ul a:hover,.nav-ul a.act{color:var(--accent);background:var(--accent-lt)}
+
+/* ── HEADER ───────────────────────────────────────────────── */
+.res-head{padding:calc(var(--nav-h) + 4rem) 0 2.5rem;position:relative;overflow:hidden}
+.res-head::before{content:'';position:absolute;top:0;right:-5%;width:55%;height:120%;
+  background:radial-gradient(ellipse at top right,rgba(27,94,53,.07) 0%,transparent 65%);pointer-events:none}
+.label{font-size:.72rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem}
+.res-title{font-family:'DM Serif Display',serif;font-size:clamp(2.2rem,5vw,3.4rem);line-height:1.1;margin-bottom:.8rem}
+.res-sub{font-size:1rem;color:var(--muted);max-width:560px}
+
+/* ── CONTROLS (search + filters) ──────────────────────────── */
+.controls{position:sticky;top:var(--nav-h);z-index:50;background:rgba(245,244,240,.92);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:1.2rem 0;border-bottom:1px solid var(--border)}
+.search-box{position:relative;margin-bottom:1.1rem}
+.search-box input{width:100%;padding:.85rem 1rem .85rem 2.7rem;font-size:.95rem;font-family:inherit;
+  background:var(--surface);border:1.5px solid var(--border);border-radius:var(--r);color:var(--text);transition:border-color .2s}
+.search-box input:focus{outline:none;border-color:var(--accent)}
+.search-box input::placeholder{color:var(--muted)}
+.search-ico{position:absolute;left:1rem;top:50%;transform:translateY(-50%);color:var(--muted);font-size:1rem}
+.filters{display:flex;gap:.55rem;flex-wrap:wrap}
+.chip{padding:.4rem 1rem;border:1.5px solid var(--border);border-radius:100px;font-size:.82rem;
+  color:var(--muted);background:var(--surface);transition:var(--t)}
+.chip:hover{border-color:var(--accent);color:var(--accent)}
+.chip.act{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+/* ── RESOURCE GRID ────────────────────────────────────────── */
+.res-section{padding:2.8rem 0 .5rem}
+.cat-title{font-family:'DM Serif Display',serif;font-size:1.5rem;margin-bottom:1.3rem;display:flex;align-items:center;gap:.7rem}
+.cat-count{font-family:'DM Sans',sans-serif;font-size:.78rem;font-weight:500;color:var(--accent);
+  background:var(--accent-lt);padding:.15rem .6rem;border-radius:100px}
+.res-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.2rem}
+
+.res-card{display:flex;gap:1rem;align-items:flex-start;background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--r-lg);padding:1.4rem;position:relative;overflow:hidden;transition:var(--t)}
+.res-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:0;background:var(--accent);transition:height .45s var(--ease)}
+.res-card:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 14px 34px rgba(27,94,53,.12)}
+.res-card:hover::before{height:100%}
+.res-ico{width:46px;height:46px;flex-shrink:0;display:flex;align-items:center;justify-content:center;
+  background:var(--accent-lt);border-radius:var(--r);font-size:1.2rem}
+.res-body{flex:1;min-width:0}
+.res-card h3{font-family:'DM Serif Display',serif;font-size:1.05rem;line-height:1.35;margin-bottom:.3rem;transition:color .2s}
+.res-card:hover h3{color:var(--accent)}
+.res-card p{font-size:.83rem;color:var(--muted);line-height:1.55;margin-bottom:.7rem}
+.res-foot{display:flex;align-items:center;justify-content:space-between;gap:.5rem}
+.res-tag{font-size:.7rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.res-open{font-size:.78rem;font-weight:500;color:var(--accent);opacity:0;transition:opacity .3s,transform .3s}
+.res-card:hover .res-open{opacity:1;transform:translateX(2px)}
+
+/* Empty state when search finds nothing */
+.empty{text-align:center;padding:4rem 0;color:var(--muted)}
+.empty-ico{font-size:2.5rem;opacity:.35;margin-bottom:.8rem}
+
+/* ── FOOTER ───────────────────────────────────────────────── */
+footer{background:var(--text);color:rgba(255,255,255,.42);padding:1.4rem 0;font-size:.78rem;margin-top:3rem}
+.foot-in{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.8rem}
+.foot-in a{color:rgba(255,255,255,.42);transition:color .2s}
+.foot-in a:hover{color:#fff}
+
+@media(max-width:700px){
+  .nav-ul a:not(.act){display:none}  /* keep nav clean on mobile */
+  .res-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════ NAVBAR ═══════════════ -->
+<nav id="nav">
+  <div class="nav-in">
+    <a class="nav-logo" href="index.html">NN</a>
+    <ul class="nav-ul">
+      <a href="index.html#about">About</a>
+      <a href="index.html#papers">Papers</a>
+      <a href="resources.html" class="act">Resources</a>
+      <a href="index.html#contact">Contact</a>
+    </ul>
+  </div>
+</nav>
+
+<!-- ═══════════════ HEADER ═══════════════ -->
+<header class="res-head">
+  <div class="wrap">
+    <div class="label">Resources</div>
+    <h1 class="res-title">Documents &amp; References</h1>
+    <p class="res-sub">A collection of papers, notes, study materials, and reference documents. Click any card to open the PDF in a new tab.</p>
+  </div>
+</header>
+
+<!-- ═══════════════ SEARCH + FILTERS ═══════════════ -->
+<div class="controls">
+  <div class="wrap">
+    <div class="search-box">
+      <span class="search-ico">🔍</span>
+      <input type="text" id="search" placeholder="Search resources by name or keyword…" autocomplete="off" />
+    </div>
+    <div class="filters" id="filters"><!-- filter chips injected by JS --></div>
+  </div>
+</div>
+
+<!-- ═══════════════ RESOURCE LIST ═══════════════ -->
+<main class="wrap" id="resList"><!-- cards injected by JS --></main>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer>
+  <div class="wrap foot-in">
+    <span>© 2025 Nirakar Nepal</span>
+    <a href="index.html">← Back to Portfolio</a>
+  </div>
+</footer>
+
+<script>
+/* =============================================================
+   ★★★  EDIT ONLY THIS LIST  ★★★
+   Add one { } block per PDF. To add a PDF:
+     1. Put the file in:  assets/resources/
+     2. Copy a block below, change the 4 fields.
+
+   Fields:
+     category : which group it appears under (also becomes a filter chip)
+     title    : the name shown on the card
+     desc     : a short one-line description (optional, can be "")
+     file     : path to the PDF, relative to this page
+   ============================================================= */
+const RESOURCES = [
+  {
+    category: "GRE Preparation",
+    title: "Group 1",
+    desc: "Vocab list, meaning, tips to remember and in a sentence",
+    file: "assets/resources/1.pdf"
+  },
+   {
+    category: "GRE Preparation",
+    title: "Group 2",
+    desc: "Vocab list, meaning, tips to remember and in a sentence",
+    file: "assets/resources/2.pdf"
+  },
+   {
+    category: "GRE Preparation",
+    title: "Group 3",
+    desc: "Vocab list, meaning, tips to remember and in a sentence",
+    file: "assets/resources/3.pdf"
+  },
+   {
+    category: "GRE Preparation",
+    title: "Group 4",
+    desc: "Vocab list, meaning, tips to remember and in a sentence",
+    file: "assets/resources/4.pdf"
+  },
+   {
+    category: "GRE Preparation",
+    title: "Group 5",
+    desc: "Vocab list, meaning, tips to remember and in a sentence",
+    file: "assets/resources/5.pdf"
+  },
+   {
+    category: "GRE Preparation",
+    title: "Group 6",
+    desc: "Vocab list, meaning, tips to remember and in a sentence",
+    file: "assets/resources/6.pdf"
+  },
+   {
+    category: "GRE Preparation",
+    title: "Group 7",
+    desc: "Vocab list, meaning, tips to remember and in a sentence",
+    file: "assets/resources/7.pdf"
+  },
+   {
+    category: "GRE Preparation",
+    title: "Group 8",
+    desc: "Vocab list, meaning, tips to remember and in a sentence",
+    file: "assets/resources/8.pdf"
+  },
+   {
+    category: "GRE Preparation",
+    title: "Group 9",
+    desc: "Vocab list, meaning, tips to remember and in a sentence",
+    file: "assets/resources/9.pdf"
+  },
+   {
+    category: "GRE Preparation",
+    title: "Group 10",
+    desc: "Vocab list, meaning, tips to remember and in a sentence",
+    file: "assets/resources/10.pdf"
+  },
+   
+  
+  // ── Copy a block above for each new PDF (up to 30+ is fine) ──
+];
+
+/* =============================================================
+   RENDERING LOGIC — you normally don't need to touch this.
+   ============================================================= */
+const listEl    = document.getElementById('resList');
+const filtersEl = document.getElementById('filters');
+const searchEl  = document.getElementById('search');
+
+// Pick an icon based on category name (just a nice touch)
+function iconFor(cat){
+  const c = cat.toLowerCase();
+  if (c.includes('paper') || c.includes('research')) return '📄';
+  if (c.includes('gre') || c.includes('exam'))       return '🎓';
+  if (c.includes('note') || c.includes('study'))     return '📚';
+  if (c.includes('slide') || c.includes('present'))  return '📊';
+  return '📁';
+}
+
+let activeFilter = 'All';
+
+// Build the filter chips from the unique categories
+function buildFilters(){
+  const cats = ['All', ...new Set(RESOURCES.map(r => r.category))];
+  filtersEl.innerHTML = '';
+  cats.forEach(cat => {
+    const b = document.createElement('button');
+    b.className = 'chip' + (cat === activeFilter ? ' act' : '');
+    b.textContent = cat;
+    b.onclick = () => { activeFilter = cat; buildFilters(); render(); };
+    filtersEl.appendChild(b);
+  });
+}
+
+// Render cards, grouped by category, respecting filter + search
+function render(){
+  const q = searchEl.value.trim().toLowerCase();
+
+  let items = RESOURCES.filter(r => {
+    const matchCat = activeFilter === 'All' || r.category === activeFilter;
+    const matchSearch = !q ||
+      r.title.toLowerCase().includes(q) ||
+      (r.desc || '').toLowerCase().includes(q) ||
+      r.category.toLowerCase().includes(q);
+    return matchCat && matchSearch;
+  });
+
+  if (!items.length){
+    listEl.innerHTML = '<div class="empty"><div class="empty-ico">🔍</div><p>No resources match your search.</p></div>';
+    return;
+  }
+
+  // Group by category
+  const groups = {};
+  items.forEach(r => { (groups[r.category] = groups[r.category] || []).push(r); });
+
+  listEl.innerHTML = Object.entries(groups).map(([cat, arr]) => `
+    <section class="res-section">
+      <h2 class="cat-title">${cat} <span class="cat-count">${arr.length}</span></h2>
+      <div class="res-grid">
+        ${arr.map(r => `
+          <a class="res-card" href="${r.file}" target="_blank" rel="noopener">
+            <div class="res-ico">${iconFor(r.category)}</div>
+            <div class="res-body">
+              <h3>${r.title}</h3>
+              ${r.desc ? `<p>${r.desc}</p>` : ''}
+              <div class="res-foot">
+                <span class="res-tag">PDF</span>
+                <span class="res-open">Open →</span>
+              </div>
+            </div>
+          </a>
+        `).join('')}
+      </div>
+    </section>
+  `).join('');
+}
+
+searchEl.addEventListener('input', render);
+buildFilters();
+render();
+</script>
+</body>
+</html>
